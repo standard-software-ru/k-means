@@ -19,3 +19,5 @@ public:
 	int getIdCluster();
 	void setIdCluster(int idCluster);
 };
+
+

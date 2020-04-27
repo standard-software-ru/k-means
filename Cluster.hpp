@@ -16,3 +16,5 @@ public:
 	Point* getCenter();
 	void setCenter(float x, float y);
 };
+
+

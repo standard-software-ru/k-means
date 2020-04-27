@@ -8,7 +8,7 @@ float Math::getDistance(Point* one, Point* two)
 	return sqrt(xCoord + yCoord);
 }
 
-float Math::means(std::vector<float> numbers)
+float Math::means(const std::vector<float>& numbers)
 {
 	float result = 0;
 
@@ -19,3 +19,4 @@ float Math::means(std::vector<float> numbers)
 
 	return result / numbers.size();
 }
+

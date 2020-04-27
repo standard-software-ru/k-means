@@ -9,5 +9,6 @@ class Math
 {
 public:
 	static float getDistance(Point* one, Point* two);
-	static float means(std::vector<float> numbers);
+	static float means(const std::vector<float>& numbers);
 };
+

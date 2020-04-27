@@ -27,6 +27,12 @@ bool KMeans::setClusterForPoint(Point* point)
 	float distance = INFINITY;
 	float tmpDistance;
 	bool foundCluster = false;
+	Cluster* currentPointCluster = findCluster(point);
+
+	if (currentPointCluster)
+	{
+		distance = getClusterDistance(point, currentPointCluster);
+	}
 
 	for (auto cluster : clusters)
 	{
@@ -41,6 +47,27 @@ bool KMeans::setClusterForPoint(Point* point)
 	}
 
 	return foundCluster;
+}
+
+/**
+ * Find cluster
+ */
+Cluster* KMeans::findCluster(Point* point)
+{
+	for (const auto cluster : clusters)
+	{
+		if (point->getIdCluster() == cluster->getId()) return cluster;
+	}
+
+	return nullptr;
+}
+
+/**
+ * Get cluster distance
+ */
+float KMeans::getClusterDistance(Point* point, Cluster* cluster)
+{
+	return Math::getDistance(point, cluster->getCenter());
 }
 
 /**
@@ -102,3 +129,4 @@ void KMeans::clustering()
 		repositionClusterCenter();
 	}
 }
+

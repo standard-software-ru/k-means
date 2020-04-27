@@ -33,6 +33,16 @@ public:
 	bool setClusterForPoint(Point* point);
 
 	/**
+	 * Find cluster
+	 */
+	Cluster* findCluster(Point* point);
+
+	/**
+	 * Get cluster distance
+	 */
+	float getClusterDistance(Point* point, Cluster* cluster);
+
+	/**
 	 * Find all points in cluster
 	 */
 	void findAllPointsInCluster(Cluster* cluster, std::vector<Point*>& accumulator);
@@ -47,3 +57,4 @@ public:
 	 */
 	void clustering();
 };
+
